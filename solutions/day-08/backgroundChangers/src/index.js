@@ -111,10 +111,6 @@ const Count = ({ count, addOne, minusOne }) => (
     </div>
 );
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
 // TechList Component
 // class base component
 class TechList extends React.Component {
@@ -218,8 +214,6 @@ class Country extends React.Component {
         const { selectCountry } = this.props;
         const list = countriesData.map(
             ({ flag, name, capital, languages, population, currency }) => {
-                let lang = languages.map((lan) => `${lan}`);
-                console.log(lang.join(',').replace(/,/g, ',    '));
                 return (
                     <div>
                         <div style={myStyles.container}>
